@@ -30,12 +30,20 @@ class ClientRepository constructor(
 
         }
 
-    suspend fun loadCategoryList(error: (String) -> Unit) = withContext(Dispatchers.IO) {
+    suspend fun loadCategoryList() = withContext(Dispatchers.IO) {
 
         Timber.e("loadCategoryList")
 
-
         val categories = movieDao.getCategoriesList()
+
+        categories.apply { }
+
+
+    }
+    suspend fun fetchCategoryList(error: (String) -> Unit) = withContext(Dispatchers.IO) {
+
+        Timber.e("fetchCategoryList")
+
 
         isLoading = true
         try {
@@ -57,7 +65,6 @@ class ClientRepository constructor(
         }
         isLoading = false
 
-        categories.apply { }
 
 
     }

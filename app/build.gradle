@@ -13,6 +13,9 @@ android {
         versionCode versions.versionCode
         versionName versions.versionName
         vectorDrawables.useSupportLibrary = true
+
+        multiDexEnabled true
+
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -84,6 +87,13 @@ dependencies {
     testImplementation "org.robolectric:robolectric:$versions.robolectricVersion"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoKotlinVersion"
     implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+
 }
 
 apply from: '../spotless.gradle'

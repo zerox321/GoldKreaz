@@ -1,8 +1,7 @@
 
 package com.eslam.goldkreaz
 
-import android.app.Application
-import androidx.databinding.library.BuildConfig
+import androidx.multidex.MultiDexApplication
 import com.jakewharton.threetenabp.AndroidThreeTen
 import com.eslam.goldkreaz.di.networkModule
 import com.eslam.goldkreaz.di.persistenceModule
@@ -13,7 +12,7 @@ import org.koin.core.context.startKoin
 import timber.log.Timber
 
 @Suppress("unused")
-class App : Application() {
+class App : MultiDexApplication() {
 
   override fun onCreate() {
     super.onCreate()

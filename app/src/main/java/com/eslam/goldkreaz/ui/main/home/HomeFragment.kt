@@ -1,7 +1,6 @@
 package com.eslam.goldkreaz.ui.main.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,9 +36,9 @@ class HomeFragment : DatabindingFragment() {
 
     private fun observeData() =
         this.homeViewModel.categoryLiveData.observe(viewLifecycleOwner) {
-            Timber.e(it.size.toString())
-
+            this.homeViewModel.adapter.submitList(it)
         }
+
     private fun observeMessages() =
         this.homeViewModel.toastLiveData.observe(viewLifecycleOwner) {
             Timber.e(it)

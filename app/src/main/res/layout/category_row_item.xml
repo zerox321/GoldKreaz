@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+        <variable
+            name="Category"
+            type="com.eslam.entity.entities.CategoryEntity" />
+
+        <variable
+            name="listener"
+            type="com.eslam.goldkreaz.ui.main.home.CategoryAdapter.ClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:foreground="?attr/selectableItemBackground"
+        android:onClick="@{(v)-> listener.onRowClick(v,Category)}"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            app:bindingPostUrl="@{Category.icon}"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:padding="@dimen/md_keylinesV"
+            android:text="@{Category.total_items}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="@dimen/md_keylinesV"
+            android:text="@{Category.name}" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

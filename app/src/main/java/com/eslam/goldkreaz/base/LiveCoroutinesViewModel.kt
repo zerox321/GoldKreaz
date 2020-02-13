@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 open class LiveCoroutinesViewModel : ViewModel() {
 
@@ -13,4 +15,7 @@ open class LiveCoroutinesViewModel : ViewModel() {
       emitSource(block())
     }
   }
+
+
+
 }
